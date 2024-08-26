@@ -17,7 +17,7 @@ function convertNums(nums) {
     let result = nums.split(',').map(num => {
         let val = Number(num)
         if (isNaN(val)) {
-            throw new ExpressError(`${num} in not a number `, 400)
+            throw new ExpressError(`${num} is not a number `, 400)
         }
         return val
     })
@@ -69,3 +69,5 @@ app.use((err, req, res, next) => {
 app.listen(3000, function () {
     console.log('Server running on port 3000');
 });
+
+module.exports = app;
